@@ -1,0 +1,28 @@
+{
+  "name": "Moonscale-erp",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Moonscale ERP — TypeScript port of Uccello CRM (NestJS + React + MongoDB).",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "db:push": "pnpm --filter @Moonscale/backend prisma:db:push",
+    "db:generate": "pnpm --filter @Moonscale/backend prisma:generate",
+    "db:seed": "pnpm --filter @Moonscale/backend seed"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "prettier": "^3.4.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}

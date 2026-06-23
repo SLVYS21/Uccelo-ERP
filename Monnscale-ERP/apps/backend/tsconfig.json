@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "removeComments": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "incremental": false,
+    "sourceMap": true,
+    "target": "ES2022",
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
+    "useDefineForClassFields": false,
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
