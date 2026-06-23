@@ -2,6 +2,7 @@ import { Building2, GripVertical } from 'lucide-react';
 import { useMemo } from 'react';
 import type { DealCard as DealCardType } from '@Moonscale/shared';
 import { InitialsAvatar } from './InitialsAvatar';
+import { formatCurrency } from '@/lib/format';
 
 interface Props {
   deal: DealCardType;
@@ -12,11 +13,7 @@ interface Props {
 export function DealCard({ deal, onDragStart, onDragEnd }: Props) {
   const amountLabel = useMemo(() => {
     if (deal.amount == null) return null;
-    return new Intl.NumberFormat('fr-FR', {
-      style: 'currency',
-      currency: deal.currency || 'EUR',
-      maximumFractionDigits: 0,
-    }).format(deal.amount);
+    return formatCurrency(deal.amount, deal.currency || 'XOF');
   }, [deal.amount, deal.currency]);
 
   return (

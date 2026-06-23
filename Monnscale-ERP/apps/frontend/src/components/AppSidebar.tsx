@@ -7,7 +7,6 @@ import {
   LayoutGrid,
   ListChecks,
   SlidersHorizontal,
-  Sparkles,
   Users,
   Workflow,
 } from 'lucide-react';
@@ -41,7 +40,6 @@ export function AppSidebar() {
       { title: 'Contacts', href: `/${teamSlug}/contacts`, icon: Users },
       { title: 'Pipeline', href: `/${teamSlug}/pipeline`, icon: KanbanSquare },
       { title: 'Tasks', href: `/${teamSlug}/tasks`, icon: CheckSquare },
-      { title: 'AI Assistant', href: `/${teamSlug}/assistant`, icon: Sparkles },
     ];
   }, [teamSlug]);
 

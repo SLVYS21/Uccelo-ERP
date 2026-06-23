@@ -24,6 +24,7 @@ import { InitialsAvatar } from '@/components/crm/InitialsAvatar';
 import { StatTile } from '@/components/crm/StatTile';
 import { ActivityTimeline } from '@/components/crm/ActivityTimeline';
 import { CustomFieldsApi, DealsApi } from '@/api/crm.api';
+import { formatCurrency } from '@/lib/format';
 
 export function DealShowPage() {
   const { teamSlug = '', id = '' } = useParams<{ teamSlug: string; id: string }>();
@@ -61,14 +62,7 @@ export function DealShowPage() {
     );
   }
 
-  const amountLabel =
-    deal.amount == null
-      ? null
-      : new Intl.NumberFormat('fr-FR', {
-          style: 'currency',
-          currency: deal.currency || 'EUR',
-          maximumFractionDigits: 0,
-        }).format(deal.amount);
+  const amountLabel = deal.amount == null ? null : formatCurrency(deal.amount, deal.currency || 'XOF');
 
   const statusVariant: 'default' | 'secondary' | 'destructive' =
     deal.status === 'won' ? 'default' : deal.status === 'lost' ? 'destructive' : 'secondary';

@@ -22,7 +22,6 @@ import { TasksIndexPage } from '@/pages/tasks/Index';
 import { CustomFieldsPage } from '@/pages/admin/CustomFields';
 import { PicklistsPage } from '@/pages/admin/Picklists';
 import { PipelineSettingsPage } from '@/pages/admin/PipelineSettings';
-import { AssistantPage } from '@/pages/Assistant';
 import { ProfilePage } from '@/pages/settings/Profile';
 import { SecurityPage } from '@/pages/settings/Security';
 import { LanguagePage } from '@/pages/settings/Language';
@@ -80,7 +79,6 @@ export const router = createBrowserRouter([
       { path: '/:teamSlug/custom-fields', element: <CustomFieldsPage /> },
       { path: '/:teamSlug/picklists', element: <PicklistsPage /> },
       { path: '/:teamSlug/pipeline-settings', element: <PipelineSettingsPage /> },
-      { path: '/:teamSlug/assistant', element: <AssistantPage /> },
     ],
   },
 

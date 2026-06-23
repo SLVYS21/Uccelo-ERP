@@ -131,7 +131,7 @@ export function DealFormPage() {
     mutation.mutate({
       name,
       amount: amount === '' ? null : Number(amount),
-      currency: 'EUR',
+      currency: 'XOF',
       pipelineId,
       pipelineStageId: stageId,
       expectedCloseDate: expectedCloseDate || null,
@@ -165,7 +165,7 @@ export function DealFormPage() {
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="grid gap-2">
-            <Label htmlFor="amount">Montant (€)</Label>
+            <Label htmlFor="amount">Montant (FCFA)</Label>
             <Input
               id="amount"
               value={amount}

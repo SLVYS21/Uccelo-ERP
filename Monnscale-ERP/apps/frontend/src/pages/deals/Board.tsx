@@ -16,6 +16,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { DealCard } from '@/components/crm/DealCard';
 import { DealsApi } from '@/api/crm.api';
 import { cn } from '@/lib/utils';
+import { formatCurrency } from '@/lib/format';
 
 function clone(stages: BoardStage[]): BoardStage[] {
   return JSON.parse(JSON.stringify(stages)) as BoardStage[];
@@ -43,11 +44,7 @@ export function DealsBoardPage() {
   const [drag, setDrag] = useState<{ dealId: string; from: string } | null>(null);
   const [dragOverStage, setDragOverStage] = useState<string | null>(null);
 
-  const currency = new Intl.NumberFormat('fr-FR', {
-    style: 'currency',
-    currency: 'EUR',
-    maximumFractionDigits: 0,
-  });
+  const currency = { format: (v: number) => formatCurrency(v) };
 
   const moveMutation = useMutation({
     mutationFn: ({ dealId, stageId, position }: { dealId: string; stageId: string; position: number }) =>

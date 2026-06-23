@@ -38,7 +38,8 @@ export function KpiCard({
     backgroundImage: `linear-gradient(135deg, ${accents[accent].from}, ${accents[accent].to})`,
   };
   const { display } = useCountUp(value);
-  const formatted = format === 'currency' ? `${display} €` : format === 'percent' ? `${display} %` : display;
+  const formatted =
+    format === 'currency' ? `${display} FCFA` : format === 'percent' ? `${display} %` : display;
   const hasDelta = delta != null && Number.isFinite(delta);
   const isUp = (delta ?? 0) >= 0;
   const abs = Math.abs(delta ?? 0);

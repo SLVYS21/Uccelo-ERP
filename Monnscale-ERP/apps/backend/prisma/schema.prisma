@@ -247,7 +247,7 @@ model Deal {
   contactId          String?  @db.ObjectId
   name               String
   amount             Float?
-  currency           String   @default("EUR")
+  currency           String   @default("XOF")
   status             String   @default("open") // DealStatus enum
   expectedCloseDate  DateTime?
   closedAt           DateTime?

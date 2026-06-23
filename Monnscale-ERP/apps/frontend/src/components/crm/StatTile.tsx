@@ -25,7 +25,8 @@ export function StatTile({ label, value, format = 'number', icon: Icon, accent =
     backgroundImage: `linear-gradient(135deg, ${accents[accent].from}, ${accents[accent].to})`,
   };
   const { display } = useCountUp(value);
-  const formatted = format === 'currency' ? `${display} €` : format === 'percent' ? `${display} %` : display;
+  const formatted =
+    format === 'currency' ? `${display} FCFA` : format === 'percent' ? `${display} %` : display;
 
   return (
     <div className="card-hover flex items-center gap-3 rounded-xl border bg-card p-3 shadow-card">

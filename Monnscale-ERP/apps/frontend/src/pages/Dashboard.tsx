@@ -28,6 +28,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { KpiCard } from '@/components/crm/KpiCard';
 import { DashboardApi } from '@/api/crm.api';
+import { formatCurrency } from '@/lib/format';
 
 const CHART_COLORS = [
   'var(--brand-violet)',
@@ -38,11 +39,7 @@ const CHART_COLORS = [
   'var(--brand-indigo)',
 ];
 
-const currency = new Intl.NumberFormat('fr-FR', {
-  style: 'currency',
-  currency: 'EUR',
-  maximumFractionDigits: 0,
-});
+const currency = { format: (value: number) => formatCurrency(value) };
 
 const dateFmt = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' });
 
